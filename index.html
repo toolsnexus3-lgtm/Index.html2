@@ -2,1277 +2,87 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Cheapzz — Affordable Electric Scooters</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
- box-sizing:border-box;
- margin:0;
- padding:0;
-}
-
-:root{
- --orange:#f15a24;
- --orange2:#ff7a32;
- --black:#050505;
- --dark:#0b0b0b;
- --dark2:#111;
- --dark3:#181818;
- --line:rgba(255,255,255,.09);
- --muted:#8b8b8b;
- --white:#fff;
-}
-
-html{
- scroll-behavior:smooth;
-}
-
-body{
- font-family:"Bricolage Grotesque",Arial,sans-serif;
- background:var(--black);
- color:white;
- overflow-x:hidden;
-}
-
-button,input,select{
- font-family:inherit;
-}
-
-button{
- cursor:pointer;
-}
-
-img{
- max-width:100%;
- display:block;
-}
-
-a{
- color:inherit;
- text-decoration:none;
-}
-
-.container{
- width:min(1450px,100%);
- margin:auto;
- padding:0 25px;
-}
-
-/* HEADER */
-
-header{
- position:fixed;
- top:0;
- left:0;
- right:0;
- height:70px;
- z-index:1000;
- background:rgba(5,5,5,.82);
- backdrop-filter:blur(25px);
- border-bottom:1px solid var(--line);
-}
-
-.header-inner{
- height:100%;
- display:flex;
- align-items:center;
- justify-content:space-between;
-}
-
-.logo{
- display:flex;
- align-items:center;
- gap:10px;
- font-size:21px;
- font-weight:800;
-}
-
-.logo-icon{
- width:39px;
- height:39px;
- border-radius:11px;
- display:grid;
- place-items:center;
- background:linear-gradient(135deg,var(--orange),var(--orange2));
- box-shadow:0 8px 30px rgba(241,90,36,.3);
-}
-
-.nav{
- display:flex;
- gap:30px;
-}
-
-.nav a{
- color:#999;
- font-size:14px;
- transition:.2s;
-}
-
-.nav a:hover{
- color:white;
-}
-
-.header-actions{
- display:flex;
- gap:5px;
- align-items:center;
-}
-
-.icon-btn{
- width:43px;
- height:43px;
- border-radius:50%;
- border:1px solid transparent;
- background:transparent;
- color:white;
- display:grid;
- place-items:center;
- font-size:16px;
-}
-
-.icon-btn:hover{
- background:#181818;
- color:var(--orange);
-}
-
-.cart-button{
- position:relative;
-}
-
-.cart-count{
- position:absolute;
- top:0;
- right:0;
- width:18px;
- height:18px;
- border-radius:50%;
- background:var(--orange);
- font-size:10px;
- display:none;
- place-items:center;
- border:2px solid #050505;
-}
-
-.cart-count.show{
- display:grid;
-}
-
-/* HERO */
-
-main{
- padding-top:70px;
-}
-
-.hero{
- min-height:calc(100vh - 70px);
- position:relative;
- display:flex;
- align-items:center;
- justify-content:center;
- text-align:center;
- overflow:hidden;
- background:
- radial-gradient(circle at 50% 15%,rgba(241,90,36,.22),transparent 40%),
- linear-gradient(#050505,#090909);
-}
-
-.hero-grid{
- position:absolute;
- inset:0;
- background-image:
- linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
- linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
- background-size:70px 70px;
- mask-image:radial-gradient(circle,black,transparent 75%);
-}
-
-.hero-content{
- position:relative;
- z-index:2;
- max-width:900px;
- padding:60px 20px;
-}
-
-.badge{
- display:inline-flex;
- align-items:center;
- gap:8px;
- padding:10px 17px;
- border-radius:50px;
- color:var(--orange);
- background:rgba(241,90,36,.08);
- border:1px solid rgba(241,90,36,.3);
- font-size:12px;
- font-weight:800;
- margin-bottom:25px;
-}
-
-.hero h1{
- font-size:clamp(58px,9vw,115px);
- line-height:.88;
- letter-spacing:-6px;
- font-weight:800;
-}
-
-.hero h1 span{
- color:var(--orange);
- display:block;
-}
-
-.hero p{
- max-width:650px;
- margin:30px auto;
- color:#999;
- font-size:17px;
- line-height:1.65;
-}
-
-.hero-buttons{
- display:flex;
- justify-content:center;
- gap:12px;
- flex-wrap:wrap;
-}
-
-/* BUTTONS */
-
-.btn{
- border:0;
- border-radius:50px;
- padding:14px 25px;
- font-size:13px;
- font-weight:800;
- display:inline-flex;
- justify-content:center;
- align-items:center;
- gap:8px;
- transition:.25s;
-}
-
-.btn-primary{
- color:white;
- background:linear-gradient(135deg,var(--orange),var(--orange2));
- box-shadow:0 12px 35px rgba(241,90,36,.25);
-}
-
-.btn-primary:hover{
- transform:translateY(-3px);
- box-shadow:0 18px 40px rgba(241,90,36,.35);
-}
-
-.btn-secondary{
- color:white;
- background:#171717;
- border:1px solid var(--line);
-}
-
-.btn-secondary:hover{
- background:#222;
-}
-
-/* SHOP */
-
-.shop{
- padding:95px 0;
- background:#080808;
-}
-
-.section-title{
- text-align:center;
- margin-bottom:45px;
-}
-
-.section-title h2{
- font-size:clamp(38px,5vw,62px);
- letter-spacing:-3px;
-}
-
-.section-title h2 span{
- color:var(--orange);
-}
-
-.section-title p{
- margin-top:12px;
- color:#777;
- font-size:14px;
-}
-
-.shop-tools{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:15px;
- margin-bottom:25px;
- flex-wrap:wrap;
-}
-
-.filters{
- display:flex;
- gap:8px;
- flex-wrap:wrap;
-}
-
-.filter{
- border:1px solid var(--line);
- background:#111;
- color:#999;
- padding:10px 15px;
- border-radius:50px;
- font-size:11px;
- font-weight:800;
-}
-
-.filter:hover,
-.filter.active{
- background:var(--orange);
- color:white;
- border-color:var(--orange);
-}
-
-.sort{
- background:#111;
- color:white;
- border:1px solid var(--line);
- padding:11px 15px;
- border-radius:10px;
- outline:none;
-}
-
-/* PRODUCTS */
-
-.products{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:18px;
-}
-
-.card{
- background:linear-gradient(180deg,#151515,#0d0d0d);
- border:1px solid var(--line);
- border-radius:20px;
- overflow:hidden;
- transition:.3s;
-}
-
-.card:hover{
- transform:translateY(-7px);
- border-color:rgba(241,90,36,.4);
- box-shadow:0 25px 70px rgba(0,0,0,.55);
-}
-
-.card-image{
- height:280px;
- background:#f4f4f4;
- position:relative;
- display:flex;
- align-items:center;
- justify-content:center;
- cursor:pointer;
- overflow:hidden;
-}
-
-.card-image img{
- width:100%;
- height:100%;
- object-fit:contain;
- transition:.5s;
-}
-
-.card:hover .card-image img{
- transform:scale(1.06);
-}
-
-.badge-sale{
- position:absolute;
- top:13px;
- left:13px;
- z-index:2;
- background:var(--orange);
- padding:6px 10px;
- border-radius:7px;
- font-size:10px;
- font-weight:800;
-}
-
-.badge-stock{
- position:absolute;
- top:13px;
- right:13px;
- z-index:2;
- background:rgba(0,0,0,.75);
- border:1px solid rgba(46,204,113,.3);
- color:#5ee58f;
- padding:6px 10px;
- border-radius:7px;
- font-size:9px;
- font-weight:800;
-}
-
-.card-body{
- padding:18px;
-}
-
-.category{
- color:var(--orange);
- text-transform:uppercase;
- font-size:10px;
- font-weight:800;
- margin-bottom:7px;
-}
-
-.card h3{
- font-size:18px;
- margin-bottom:7px;
-}
-
-.description{
- color:#777;
- font-size:12px;
- line-height:1.5;
- min-height:38px;
-}
-
-.specs-mini{
- display:flex;
- flex-wrap:wrap;
- gap:6px;
- margin:14px 0;
-}
-
-.specs-mini span{
- background:#191919;
- border:1px solid var(--line);
- color:#999;
- padding:6px 8px;
- border-radius:7px;
- font-size:9px;
-}
-
-.price-row{
- display:flex;
- align-items:end;
- gap:9px;
- margin-bottom:15px;
-}
-
-.price{
- font-size:24px;
- font-weight:800;
-}
-
-.old-price{
- color:#555;
- text-decoration:line-through;
- font-size:11px;
-}
-
-.card-buttons{
- display:flex;
- gap:7px;
-}
-
-.card-buttons button{
- flex:1;
-}
-
-/* MODALS */
-
-.modal{
- position:fixed;
- inset:0;
- z-index:3000;
- display:none;
- align-items:center;
- justify-content:center;
- padding:20px;
- background:rgba(0,0,0,.84);
- backdrop-filter:blur(12px);
-}
-
-.modal.active{
- display:flex;
-}
-
-.modal-box{
- width:min(1050px,100%);
- max-height:92vh;
- overflow:auto;
- background:#101010;
- border:1px solid var(--line);
- border-radius:25px;
- position:relative;
- box-shadow:0 40px 120px #000;
-}
-
-.close{
- position:absolute;
- right:18px;
- top:18px;
- z-index:10;
- width:42px;
- height:42px;
- border-radius:50%;
- border:1px solid var(--line);
- background:#191919;
- color:white;
- font-size:17px;
-}
-
-.close:hover{
- background:#252525;
-}
-
-/* PRODUCT DETAIL */
-
-.product-detail{
- display:grid;
- grid-template-columns:1.05fr .95fr;
-}
-
-.detail-image{
- min-height:560px;
- background:#f4f4f4;
- display:grid;
- place-items:center;
- padding:40px;
-}
-
-.detail-image img{
- width:100%;
- height:100%;
- max-height:530px;
- object-fit:contain;
-}
-
-.detail-content{
- padding:55px 40px;
-}
-
-.detail-category{
- color:var(--orange);
- font-size:11px;
- text-transform:uppercase;
- font-weight:800;
-}
-
-.detail-content h2{
- font-size:44px;
- letter-spacing:-2px;
- line-height:1;
- margin:12px 0;
-}
-
-.detail-description{
- color:#999;
- font-size:14px;
- line-height:1.7;
- margin:18px 0;
-}
-
-.detail-price{
- font-size:34px;
- font-weight:800;
-}
-
-.detail-old{
- color:#555;
- text-decoration:line-through;
- margin-left:8px;
-}
-
-.detail-specs{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:8px;
- margin:25px 0;
-}
-
-.spec-box{
- background:#181818;
- border:1px solid var(--line);
- border-radius:12px;
- padding:13px;
-}
-
-.spec-box small{
- display:block;
- color:#666;
- text-transform:uppercase;
- font-size:9px;
- margin-bottom:4px;
-}
-
-.spec-box strong{
- font-size:13px;
-}
-
-.detail-actions{
- display:flex;
- gap:9px;
-}
-
-.detail-actions button{
- flex:1;
-}
-
-/* SEARCH */
-
-.search-box{
- width:min(700px,100%);
- background:#111;
- border:1px solid var(--line);
- border-radius:22px;
- padding:25px;
-}
-
-.search-header{
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin-bottom:18px;
-}
-
-.search-header h3{
- font-size:22px;
-}
-
-.search-input{
- width:100%;
- background:#191919;
- color:white;
- border:1px solid var(--line);
- border-radius:13px;
- padding:15px;
- outline:none;
- font-size:15px;
-}
-
-.search-input:focus{
- border-color:var(--orange);
-}
-
-.search-results{
- margin-top:15px;
- max-height:500px;
- overflow:auto;
-}
-
-.search-result{
- display:flex;
- align-items:center;
- gap:12px;
- padding:10px;
- border-radius:12px;
- cursor:pointer;
-}
-
-.search-result:hover{
- background:#1b1b1b;
-}
-
-.search-result img{
- width:65px;
- height:65px;
- background:#eee;
- border-radius:9px;
- object-fit:contain;
-}
-
-.search-info{
- flex:1;
-}
-
-.search-info strong{
- display:block;
- font-size:14px;
-}
-
-.search-info span{
- color:var(--orange);
- font-size:12px;
-}
-
-/* CART */
-
-.cart{
- position:fixed;
- right:0;
- top:0;
- width:min(450px,100%);
- height:100vh;
- z-index:4000;
- background:#101010;
- border-left:1px solid var(--line);
- transform:translateX(100%);
- transition:.35s;
- display:flex;
- flex-direction:column;
-}
-
-.cart.active{
- transform:translateX(0);
-}
-
-.cart-header{
- padding:21px;
- border-bottom:1px solid var(--line);
- display:flex;
- justify-content:space-between;
- align-items:center;
-}
-
-.cart-header h3{
- font-size:20px;
-}
-
-.cart-body{
- flex:1;
- overflow:auto;
- padding:20px;
-}
-
-.cart-item{
- display:grid;
- grid-template-columns:70px 1fr auto;
- gap:12px;
- padding:15px 0;
- border-bottom:1px solid var(--line);
-}
-
-.cart-item img{
- width:70px;
- height:70px;
- background:#eee;
- border-radius:10px;
- object-fit:contain;
-}
-
-.cart-item h4{
- font-size:13px;
- line-height:1.3;
-}
-
-.cart-price{
- color:var(--orange);
- font-size:12px;
- font-weight:800;
- margin:5px 0;
-}
-
-.quantity{
- display:flex;
- align-items:center;
- gap:8px;
-}
-
-.quantity button{
- width:25px;
- height:25px;
- border-radius:50%;
- background:#222;
- color:white;
- border:1px solid var(--line);
-}
-
-.remove{
- background:none;
- border:0;
- color:#666;
-}
-
-.remove:hover{
- color:#ff453a;
-}
-
-.empty-cart{
- text-align:center;
- color:#777;
- padding:80px 20px;
-}
-
-.empty-cart i{
- font-size:55px;
- color:#222;
- margin-bottom:15px;
-}
-
-.cart-footer{
- padding:22px;
- border-top:1px solid var(--line);
- background:#151515;
-}
-
-.total{
- display:flex;
- justify-content:space-between;
- font-size:20px;
- font-weight:800;
- margin-bottom:15px;
-}
-
-/* OVERLAY */
-
-.overlay{
- position:fixed;
- inset:0;
- z-index:3500;
- background:rgba(0,0,0,.7);
- display:none;
-}
-
-.overlay.active{
- display:block;
-}
-
-/* CHECKOUT */
-
-.checkout-box{
- width:min(900px,100%);
- max-height:94vh;
- overflow:auto;
- background:#101010;
- border:1px solid var(--line);
- border-radius:25px;
- position:relative;
- box-shadow:0 40px 120px #000;
-}
-
-.checkout-header{
- padding:28px 30px;
- border-bottom:1px solid var(--line);
-}
-
-.checkout-header h2{
- font-size:30px;
- letter-spacing:-1px;
-}
-
-.checkout-header p{
- color:#777;
- font-size:13px;
- margin-top:6px;
-}
-
-.checkout-content{
- padding:28px;
-}
-
-.checkout-grid{
- display:grid;
- grid-template-columns:1.2fr .8fr;
- gap:25px;
-}
-
-.form-section{
- margin-bottom:28px;
-}
-
-.form-section h3{
- font-size:17px;
- margin-bottom:15px;
-}
-
-.form-section h3 i{
- color:var(--orange);
- margin-right:7px;
-}
-
-.form-grid{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:12px;
-}
-
-.field{
- display:flex;
- flex-direction:column;
- gap:7px;
-}
-
-.field.full{
- grid-column:1/-1;
-}
-
-.field label{
- color:#aaa;
- font-size:11px;
- font-weight:700;
-}
-
-.field input,
-.field select{
- width:100%;
- padding:13px 14px;
- background:#181818;
- color:white;
- border:1px solid var(--line);
- border-radius:11px;
- outline:none;
-}
-
-.field input:focus,
-.field select:focus{
- border-color:var(--orange);
-}
-
-.field input::placeholder{
- color:#555;
-}
-
-.payment-methods{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:10px;
-}
-
-.payment-method{
- border:1px solid var(--line);
- background:#171717;
- border-radius:14px;
- padding:15px 10px;
- color:white;
- text-align:center;
- transition:.2s;
-}
-
-.payment-method:hover{
- border-color:#555;
-}
-
-.payment-method.active{
- border-color:var(--orange);
- background:rgba(241,90,36,.09);
- box-shadow:0 0 0 1px var(--orange);
-}
-
-.payment-method i{
- font-size:25px;
- display:block;
- margin-bottom:8px;
-}
-
-.payment-method span{
- font-size:12px;
- font-weight:800;
-}
-
-.crypto-payment{
- margin-top:14px;
- padding:16px;
- border-radius:14px;
- background:#181818;
- border:1px solid var(--line);
- display:none;
-}
-
-.crypto-payment.active{
- display:block;
-}
-
-.crypto-title{
- display:flex;
- align-items:center;
- gap:8px;
- font-weight:800;
- margin-bottom:10px;
-}
-
-.crypto-title i{
- color:var(--orange);
-}
-
-.crypto-address{
- display:flex;
- gap:7px;
-}
-
-.crypto-address input{
- flex:1;
- min-width:0;
- background:#0d0d0d;
- color:#ddd;
- border:1px solid var(--line);
- padding:11px;
- border-radius:9px;
- font-size:11px;
-}
-
-.copy-btn{
- border:0;
- background:var(--orange);
- color:white;
- padding:0 15px;
- border-radius:9px;
- font-weight:800;
-}
-
-.payment-note{
- color:#777;
- font-size:11px;
- line-height:1.5;
- margin-top:10px;
-}
-
-.order-summary{
- background:#171717;
- border:1px solid var(--line);
- border-radius:17px;
- padding:20px;
- height:max-content;
- position:sticky;
- top:0;
-}
-
-.order-summary h3{
- font-size:17px;
- margin-bottom:16px;
-}
-
-.summary-item{
- display:flex;
- justify-content:space-between;
- gap:12px;
- padding:10px 0;
- border-bottom:1px solid var(--line);
- font-size:12px;
-}
-
-.summary-item span:first-child{
- color:#aaa;
-}
-
-.summary-total{
- display:flex;
- justify-content:space-between;
- font-size:21px;
- font-weight:800;
- margin:20px 0;
-}
-
-.checkout-button{
- width:100%;
-}
-
-.secure-note{
- text-align:center;
- color:#555;
- font-size:10px;
- margin-top:10px;
-}
-
-.success-screen{
- display:none;
- padding:60px 30px;
- text-align:center;
-}
-
-.success-screen.active{
- display:block;
-}
-
-.success-icon{
- width:75px;
- height:75px;
- border-radius:50%;
- background:rgba(46,204,113,.12);
- color:#2ecc71;
- display:grid;
- place-items:center;
- font-size:35px;
- margin:0 auto 20px;
-}
-
-.success-screen h2{
- font-size:30px;
-}
-
-.success-screen p{
- color:#888;
- margin:12px auto 25px;
- max-width:500px;
- line-height:1.6;
-}
-
-.order-number{
- color:var(--orange);
- font-weight:800;
-}
-
-/* TOAST */
-
-#toast{
- position:fixed;
- right:20px;
- bottom:20px;
- z-index:5000;
-}
-
-.toast{
- background:#181818;
- border:1px solid var(--line);
- border-left:4px solid var(--orange);
- padding:15px 18px;
- border-radius:12px;
- box-shadow:0 20px 60px #000;
- font-size:13px;
-}
-
-/* FOOTER */
-
-footer{
- background:#020202;
- border-top:1px solid var(--line);
- padding:70px 0 30px;
-}
-
-.footer-grid{
- display:grid;
- grid-template-columns:2fr 1fr 1fr 1fr;
- gap:50px;
-}
-
-footer h4{
- font-size:14px;
- margin-bottom:15px;
-}
-
-footer p,
-footer a{
- color:#777;
- font-size:12px;
- line-height:1.9;
-}
-
-footer a:hover{
- color:white;
-}
-
-.footer-bottom{
- margin-top:45px;
- padding-top:25px;
- border-top:1px solid var(--line);
- display:flex;
- justify-content:space-between;
- gap:15px;
- color:#555;
- font-size:10px;
- flex-wrap:wrap;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1100px){
- .products{
-  grid-template-columns:repeat(3,1fr);
- }
-
- .nav{
-  display:none;
- }
-}
-
-@media(max-width:800px){
- .checkout-grid{
-  grid-template-columns:1fr;
- }
-
- .order-summary{
-  position:static;
- }
-}
-
-@media(max-width:750px){
- .products{
-  grid-template-columns:repeat(2,1fr);
- }
-
- .product-detail{
-  grid-template-columns:1fr;
- }
-
- .detail-image{
-  min-height:350px;
- }
-
- .detail-content{
-  padding:30px 22px;
- }
-
- .detail-content h2{
-  font-size:34px;
- }
-
- .footer-grid{
-  grid-template-columns:1fr 1fr;
- }
-
- .form-grid{
-  grid-template-columns:1fr;
- }
-
- .field.full{
-  grid-column:auto;
- }
-}
-
-@media(max-width:520px){
- .products{
-  grid-template-columns:1fr;
- }
-
- .card-image{
-  height:310px;
- }
-
- .hero h1{
-  letter-spacing:-4px;
- }
-
- .hero p{
-  font-size:14px;
- }
-
- .shop-tools{
-  align-items:stretch;
- }
-
- .filters{
-  width:100%;
- }
-
- .sort{
-  width:100%;
- }
-
- .footer-grid{
-  grid-template-columns:1fr;
- }
-
- .detail-specs{
-  grid-template-columns:1fr 1fr;
- }
-
- .payment-methods{
-  grid-template-columns:1fr 1fr 1fr;
- }
-
- .checkout-content{
-  padding:20px;
- }
-
- .checkout-header{
-  padding:22px 20px;
- }
-}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--orange:#f15a24;--orange2:#ff7a32;--black:#050505;--line:rgba(255,255,255,.09)}
+body{font-family:"Bricolage Grotesque",Arial,sans-serif;background:var(--black);color:#fff}
+button,input,select{font-family:inherit}button{cursor:pointer}
+.container{width:min(1450px,100%);margin:auto;padding:0 25px}
+
+header{position:fixed;top:0;left:0;right:0;height:70px;z-index:1000;background:rgba(5,5,5,.85);backdrop-filter:blur(25px);border-bottom:1px solid var(--line)}
+.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;color:#fff;text-decoration:none}
+.logo-icon{width:39px;height:39px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--orange),var(--orange2))}
+.nav{display:flex;gap:30px}.nav a{color:#999;text-decoration:none;font-size:14px}
+.header-actions{display:flex;gap:5px}.icon-btn{width:43px;height:43px;border-radius:50%;border:0;background:transparent;color:#fff;display:grid;place-items:center}
+.icon-btn:hover{background:#181818;color:var(--orange)}
+.cart-button{position:relative}.cart-count{position:absolute;top:0;right:0;width:18px;height:18px;border-radius:50%;background:var(--orange);font-size:10px;display:none;place-items:center}.cart-count.show{display:grid}
+
+main{padding-top:70px}
+.hero{min-height:calc(100vh - 70px);display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(241,90,36,.22),transparent 40%),linear-gradient(#050505,#090909)}
+.hero-content{max-width:900px;padding:60px 20px}.badge{display:inline-flex;padding:10px 17px;border-radius:50px;color:var(--orange);background:rgba(241,90,36,.08);border:1px solid rgba(241,90,36,.3);font-size:12px;font-weight:800;margin-bottom:25px}
+.hero h1{font-size:clamp(58px,9vw,115px);line-height:.88;letter-spacing:-6px}.hero h1 span{color:var(--orange);display:block}
+.hero p{max-width:650px;margin:30px auto;color:#999;font-size:17px;line-height:1.65}
+.hero-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:50px;padding:14px 25px;font-size:13px;font-weight:800;display:inline-flex;justify-content:center;align-items:center;gap:8px}
+.btn-primary{color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange2))}
+.btn-secondary{color:#fff;background:#171717;border:1px solid var(--line)}
+
+.shop{padding:95px 0;background:#080808}.section-title{text-align:center;margin-bottom:45px}.section-title h2{font-size:clamp(38px,5vw,62px);letter-spacing:-3px}.section-title h2 span{color:var(--orange)}.section-title p{margin-top:12px;color:#777}
+.shop-tools{display:flex;justify-content:space-between;gap:15px;margin-bottom:25px;flex-wrap:wrap}.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter,.sort{border:1px solid var(--line);background:#111;color:#999;padding:10px 15px;border-radius:50px;font-size:11px;font-weight:800}.filter.active{background:var(--orange);color:#fff;border-color:var(--orange)}.sort{border-radius:10px;color:#fff;outline:none}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:linear-gradient(180deg,#151515,#0d0d0d);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.card-image{height:280px;background:#f4f4f4;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.card-image img{width:100%;height:100%;object-fit:contain}
+.badge-sale{position:absolute;top:13px;left:13px;background:var(--orange);padding:6px 10px;border-radius:7px;font-size:10px;font-weight:800}.badge-stock{position:absolute;top:13px;right:13px;background:#111;color:#5ee58f;padding:6px 10px;border-radius:7px;font-size:9px}
+.card-body{padding:18px}.category{color:var(--orange);font-size:10px;font-weight:800;margin-bottom:7px}.card h3{font-size:18px;margin-bottom:7px}.description{color:#777;font-size:12px;line-height:1.5;min-height:38px}
+.specs-mini{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}.specs-mini span{background:#191919;border:1px solid var(--line);color:#999;padding:6px 8px;border-radius:7px;font-size:9px}
+.price-row{display:flex;align-items:end;gap:9px;margin-bottom:15px}.price{font-size:24px;font-weight:800}.old-price{color:#555;text-decoration:line-through;font-size:11px}.card-buttons{display:flex;gap:7px}.card-buttons button{flex:1}
+
+.modal{position:fixed;inset:0;z-index:3600;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.84);backdrop-filter:blur(12px)}.modal.active{display:flex}
+.modal-box,.checkout-box,.payment-modal-box{width:min(1050px,100%);max-height:92vh;overflow:auto;background:#101010;border:1px solid var(--line);border-radius:25px;position:relative;box-shadow:0 40px 120px #000}
+.close{position:absolute;right:18px;top:18px;z-index:10;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#191919;color:#fff;font-size:17px}
+
+.product-detail{display:grid;grid-template-columns:1.05fr .95fr}.detail-image{min-height:560px;background:#f4f4f4;display:grid;place-items:center;padding:40px}.detail-image img{width:100%;height:100%;max-height:530px;object-fit:contain}
+.detail-content{padding:55px 40px}.detail-category{color:var(--orange);font-size:11px;font-weight:800}.detail-content h2{font-size:44px;margin:12px 0}.detail-description{color:#999;line-height:1.7;margin:18px 0}.detail-price{font-size:34px;font-weight:800}.detail-old{color:#555;text-decoration:line-through;margin-left:8px}
+.detail-specs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:25px 0}.spec-box{background:#181818;border:1px solid var(--line);border-radius:12px;padding:13px}.spec-box small{display:block;color:#666;font-size:9px;margin-bottom:4px}.detail-actions{display:flex;gap:9px}.detail-actions button{flex:1}
+
+.search-box{width:min(700px,100%);background:#111;border:1px solid var(--line);border-radius:22px;padding:25px;position:relative;z-index:1}
+.search-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.search-input{width:100%;background:#191919;color:#fff;border:1px solid var(--line);border-radius:13px;padding:15px;outline:none}.search-results{margin-top:15px}.search-result{display:flex;align-items:center;gap:12px;padding:10px;border-radius:12px}.search-result img{width:65px;height:65px;background:#eee;border-radius:9px;object-fit:contain}.search-info{flex:1}.search-info span{color:var(--orange)}
+
+.cart{position:fixed;right:0;top:0;width:min(450px,100%);height:100vh;z-index:4000;background:#101010;border-left:1px solid var(--line);transform:translateX(100%);transition:.35s;display:flex;flex-direction:column}.cart.active{transform:translateX(0)}
+.cart-header{padding:21px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.cart-body{flex:1;overflow:auto;padding:20px}.cart-item{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}
+.cart-item img{width:70px;height:70px;background:#eee;border-radius:10px;object-fit:contain}.cart-price{color:var(--orange);font-size:12px;font-weight:800;margin:5px 0}.quantity{display:flex;align-items:center;gap:8px}.quantity button{width:25px;height:25px;border-radius:50%;background:#222;color:#fff;border:1px solid var(--line)}.remove{background:none;border:0;color:#666}
+.cart-footer{padding:22px;border-top:1px solid var(--line);background:#151515}.total{display:flex;justify-content:space-between;font-size:20px;font-weight:800;margin-bottom:15px}
+.overlay{position:fixed;inset:0;z-index:3500;background:rgba(0,0,0,.7);display:none}.overlay.active{display:block}
+
+.checkout-box{width:min(900px,100%)}.checkout-header{padding:28px 30px;border-bottom:1px solid var(--line)}.checkout-header h2{font-size:30px}.checkout-header p{color:#777;font-size:13px;margin-top:6px}.checkout-content{padding:28px}.checkout-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:25px}
+.form-section{margin-bottom:28px}.form-section h3{font-size:17px;margin-bottom:15px}.form-section h3 i{color:var(--orange);margin-right:7px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{color:#aaa;font-size:11px}.field input,.field select{width:100%;padding:13px 14px;background:#181818;color:#fff;border:1px solid var(--line);border-radius:11px;outline:none}
+.order-summary{background:#171717;border:1px solid var(--line);border-radius:17px;padding:20px;height:max-content;position:sticky;top:0}.summary-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}.summary-item span{color:#aaa}.summary-total{display:flex;justify-content:space-between;font-size:21px;font-weight:800;margin:20px 0}.checkout-button{width:100%}.secure-note{text-align:center;color:#555;font-size:10px;margin-top:10px}
+
+.payment-modal-box{width:min(620px,100%)}.payment-window{padding:35px}.payment-window-header{text-align:center;margin-bottom:25px}.payment-window-icon{width:65px;height:65px;border-radius:18px;background:rgba(241,90,36,.1);color:var(--orange);display:grid;place-items:center;font-size:28px;margin:0 auto 16px}.payment-window-header h2{font-size:30px}.payment-window-header p{color:#777;font-size:13px;margin-top:7px}
+.payment-total{background:#171717;border:1px solid var(--line);border-radius:15px;padding:17px 18px;display:flex;justify-content:space-between;margin-bottom:18px}.payment-total strong{font-size:22px}
+.payment-options{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:16px}.payment-option{border:1px solid var(--line);background:#171717;border-radius:14px;padding:16px 8px;color:#fff;text-align:center}.payment-option.active{border-color:var(--orange);background:rgba(241,90,36,.09);box-shadow:0 0 0 1px var(--orange)}
+.payment-option i{display:block;font-size:24px;margin-bottom:8px}.payment-option[data-method="PAYPAL"] i{color:#0070ba}.payment-option span{font-size:11px;font-weight:800}
+.payment-address-box{padding:18px;background:#171717;border:1px solid var(--line);border-radius:15px}.payment-address-title{display:flex;gap:8px;font-size:13px;font-weight:800;margin-bottom:11px}.payment-address-title i{color:var(--orange)}
+.payment-address{display:flex;gap:7px}.payment-address input{flex:1;min-width:0;background:#0b0b0b;color:#ddd;border:1px solid var(--line);padding:12px;border-radius:9px;font-size:10px}.copy-btn{border:0;background:var(--orange);color:#fff;padding:0 15px;border-radius:9px;font-weight:800}
+.payment-note{color:#777;font-size:10px;line-height:1.5;margin-top:10px}
+.payment-warning{margin-top:15px;padding:15px;border-radius:13px;background:rgba(241,90,36,.07);border:1px solid rgba(241,90,36,.25);color:#aaa;font-size:11px;line-height:1.6}.payment-warning i{color:var(--orange)}
+.payment-actions{display:flex;gap:9px;margin-top:18px}.payment-actions button{flex:1}
+
+footer{background:#020202;border-top:1px solid var(--line);padding:70px 0 30px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px}footer h4{font-size:14px;margin-bottom:15px}footer p,footer a{color:#777;font-size:12px;line-height:1.9;text-decoration:none}.footer-bottom{margin-top:45px;padding-top:25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#555;font-size:10px}
+#toast{position:fixed;right:20px;bottom:20px;z-index:6000}.toast{background:#181818;border:1px solid var(--line);border-left:4px solid var(--orange);padding:15px 18px;border-radius:12px}
+
+@media(max-width:1100px){.products{grid-template-columns:repeat(3,1fr)}.nav{display:none}}
+@media(max-width:800px){.checkout-grid{grid-template-columns:1fr}.order-summary{position:static}}
+@media(max-width:750px){.products{grid-template-columns:repeat(2,1fr)}.product-detail{grid-template-columns:1fr}.detail-image{min-height:350px}.detail-content{padding:30px 22px}.footer-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+@media(max-width:520px){.products{grid-template-columns:1fr}.payment-options{grid-template-columns:1fr 1fr}.checkout-content{padding:20px}.payment-window{padding:20px}.payment-address{flex-direction:column}.copy-btn{height:42px}}
 </style>
 </head>
 
@@ -1280,240 +90,91 @@ footer a:hover{
 
 <header>
 <div class="container header-inner">
-
-<a href="#" class="logo" onclick="home()">
-<span class="logo-icon">
-<i class="fas fa-bolt"></i>
-</span>
-<span>Cheapzz</span>
+<a href="#" class="logo" onclick="home();return false">
+<span class="logo-icon"><i class="fas fa-bolt"></i></span>Cheapzz
 </a>
-
 <nav class="nav">
 <a href="#shop">Shop</a>
 <a href="#shop" onclick="filterProducts('G Series')">G Series</a>
 <a href="#shop" onclick="filterProducts('M Series')">M Series</a>
 <a href="#shop" onclick="filterProducts('S Series')">S Series</a>
 </nav>
-
 <div class="header-actions">
-
-<button class="icon-btn" onclick="openSearch()">
-<i class="fas fa-search"></i>
-</button>
-
-<button class="icon-btn cart-button" onclick="openCart()">
-<i class="fas fa-shopping-bag"></i>
-<span id="cartCount" class="cart-count">0</span>
-</button>
-
+<button type="button" class="icon-btn" onclick="openSearch()"><i class="fas fa-search"></i></button>
+<button type="button" class="icon-btn cart-button" onclick="openCart()"><i class="fas fa-shopping-bag"></i><span id="cartCount" class="cart-count">0</span></button>
 </div>
 </div>
 </header>
 
 <main>
-
 <section class="hero">
-
-<div class="hero-grid"></div>
-
 <div class="hero-content">
-
-<div class="badge">
-<i class="fas fa-bolt"></i>
-Affordable Electric Scooters
-</div>
-
-<h1>
-CHEAP
-<span>ZZ</span>
-</h1>
-
-<p>
-Cheapzz is a website where you can find affordable
-electric scooters at great prices. Discover popular
-models and find your next ride without spending too much.
-</p>
-
-<p style="margin-top:-15px;">
-More scooters coming soon.
-</p>
-
+<div class="badge"><i class="fas fa-bolt"></i> Affordable Electric Scooters</div>
+<h1>CHEAP<span>ZZ</span></h1>
+<p>Cheapzz is a website where you can find affordable electric scooters at great prices. Discover popular models and find your next ride without spending too much.</p>
+<p style="margin-top:-15px">More scooters coming soon.</p>
 <div class="hero-buttons">
-
-<a href="#shop" class="btn btn-primary">
-<i class="fas fa-store"></i>
-Shop Scooters
-</a>
-
-<button class="btn btn-secondary" onclick="openSearch()">
-<i class="fas fa-search"></i>
-Search Scooters
-</button>
-
+<a href="#shop" class="btn btn-primary"><i class="fas fa-store"></i>Shop Scooters</a>
+<button type="button" class="btn btn-secondary" onclick="openSearch()"><i class="fas fa-search"></i>Search Scooters</button>
 </div>
 </div>
 </section>
 
 <section class="shop" id="shop">
-
 <div class="container">
-
-<div class="section-title">
-<h2>
-Explore the
-<span>Collection</span>
-</h2>
-
-<p>
-Browse the current KuKirin collection at Cheapzz.
-</p>
-</div>
-
+<div class="section-title"><h2>Explore the <span>Collection</span></h2><p>Browse the current KuKirin collection at Cheapzz.</p></div>
 <div class="shop-tools">
-
 <div class="filters">
-
-<button class="filter active" onclick="filterProducts('All')">
-All
-</button>
-
-<button class="filter" onclick="filterProducts('G Series')">
-G Series
-</button>
-
-<button class="filter" onclick="filterProducts('M Series')">
-M Series
-</button>
-
-<button class="filter" onclick="filterProducts('S Series')">
-S Series
-</button>
-
-<button class="filter" onclick="filterProducts('Commuter')">
-Commuter
-</button>
-
-<button class="filter" onclick="filterProducts('Off-Road')">
-Off-Road
-</button>
-
+<button type="button" class="filter active" onclick="filterProducts('All')">All</button>
+<button type="button" class="filter" onclick="filterProducts('G Series')">G Series</button>
+<button type="button" class="filter" onclick="filterProducts('M Series')">M Series</button>
+<button type="button" class="filter" onclick="filterProducts('S Series')">S Series</button>
+<button type="button" class="filter" onclick="filterProducts('Commuter')">Commuter</button>
+<button type="button" class="filter" onclick="filterProducts('Off-Road')">Off-Road</button>
 </div>
-
 <select class="sort" onchange="sortProducts(this.value)">
 <option value="featured">Featured</option>
 <option value="low">Price: Low to High</option>
 <option value="high">Price: High to Low</option>
 <option value="name">Name A-Z</option>
 </select>
-
 </div>
-
 <div class="products" id="products"></div>
-
 </div>
 </section>
-
 </main>
 
 <footer>
-
 <div class="container">
-
 <div class="footer-grid">
-
 <div>
-
-<a href="#" class="logo" onclick="home()" style="margin-bottom:15px">
-<span class="logo-icon">
-<i class="fas fa-bolt"></i>
-</span>
-<span>Cheapzz</span>
-</a>
-
-<p>
-Cheapzz — affordable electric scooter shopping.
-Product information, availability and prices
-should always be verified for your market.
-</p>
-
+<a href="#" class="logo" onclick="home();return false"><span class="logo-icon"><i class="fas fa-bolt"></i></span>Cheapzz</a>
+<p>Cheapzz — affordable electric scooter shopping. Product information, availability and prices should always be verified for your market.</p>
 </div>
-
-<div>
-<h4>Shop</h4>
-<a href="#shop">All Models</a><br>
-<a href="#shop" onclick="filterProducts('G Series')">G Series</a><br>
-<a href="#shop" onclick="filterProducts('M Series')">M Series</a><br>
-<a href="#shop" onclick="filterProducts('S Series')">S Series</a>
+<div><h4>Shop</h4><a href="#shop">All Models</a><br><a href="#shop">G Series</a><br><a href="#shop">M Series</a></div>
+<div><h4>Categories</h4><a href="#shop">Commuter</a><br><a href="#shop">Off-Road</a></div>
+<div><h4>Support</h4><a href="#">Shipping</a><br><a href="#">Warranty</a><br><a href="#">Returns</a><br><a href="#">Contact</a></div>
 </div>
-
-<div>
-<h4>Categories</h4>
-<a href="#shop" onclick="filterProducts('Commuter')">Commuter</a><br>
-<a href="#shop" onclick="filterProducts('Off-Road')">Off-Road</a><br>
-<a href="#shop">Electric Mobility</a>
-</div>
-
-<div>
-<h4>Support</h4>
-<a href="#">Shipping</a><br>
-<a href="#">Warranty</a><br>
-<a href="#">Returns</a><br>
-<a href="#">Contact</a>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-<span>© 2026 Cheapzz</span>
-<span>Affordable electric scooters — more models coming soon.</span>
-</div>
-
+<div class="footer-bottom"><span>© 2026 Cheapzz</span><span>Affordable electric scooters — more models coming soon.</span></div>
 </div>
 </footer>
 
 <div class="overlay" id="overlay" onclick="closeAll()"></div>
 
 <div class="modal" id="productModal">
-
 <div class="modal-box">
-
-<button class="close" onclick="closeAll()">
-<i class="fas fa-times"></i>
-</button>
-
+<button type="button" class="close" onclick="closeAll()">×</button>
 <div class="product-detail">
-
-<div class="detail-image">
-<img id="detailImage" src="" alt="Product">
-</div>
-
+<div class="detail-image"><img id="detailImage" alt=""></div>
 <div class="detail-content">
-
 <div class="detail-category" id="detailCategory"></div>
-
 <h2 id="detailName"></h2>
-
-<div>
-<span class="detail-price" id="detailPrice"></span>
-<span class="detail-old" id="detailOld"></span>
-</div>
-
+<div><span class="detail-price" id="detailPrice"></span><span class="detail-old" id="detailOld"></span></div>
 <p class="detail-description" id="detailDescription"></p>
-
 <div class="detail-specs" id="detailSpecs"></div>
-
 <div class="detail-actions">
-
-<button class="btn btn-primary" id="detailAdd">
-<i class="fas fa-cart-plus"></i>
-Add to Cart
-</button>
-
-<button class="btn btn-secondary" onclick="openCart()">
-<i class="fas fa-shopping-bag"></i>
-Cart
-</button>
-
+<button type="button" class="btn btn-primary" id="detailAdd"><i class="fas fa-cart-plus"></i>Add to Cart</button>
+<button type="button" class="btn btn-secondary" onclick="openCart()">Cart</button>
 </div>
 </div>
 </div>
@@ -1521,1459 +182,443 @@ Cart
 </div>
 
 <div class="modal" id="searchModal">
-
 <div class="search-box">
-
-<div class="search-header">
-
-<h3>Search Scooters</h3>
-
-<button class="close" style="position:static" onclick="closeAll()">
-<i class="fas fa-times"></i>
-</button>
-
-</div>
-
-<input
-class="search-input"
-id="searchInput"
-type="text"
-placeholder="Search G2, G4, Master, Pro..."
-oninput="searchProducts(this.value)"
->
-
+<div class="search-header"><h3>Search Scooters</h3><button type="button" class="close" style="position:static" onclick="closeAll()">×</button></div>
+<input class="search-input" id="searchInput" placeholder="Search G2, G4, Master, Pro..." oninput="searchProducts(this.value)">
 <div class="search-results" id="searchResults"></div>
-
 </div>
 </div>
 
 <aside class="cart" id="cart">
-
-<div class="cart-header">
-
-<h3>
-<i class="fas fa-shopping-bag" style="color:var(--orange)"></i>
-Your Cart
-</h3>
-
-<button class="icon-btn" onclick="closeAll()">
-<i class="fas fa-times"></i>
-</button>
-
-</div>
-
+<div class="cart-header"><h3><i class="fas fa-shopping-bag" style="color:var(--orange)"></i> Your Cart</h3><button type="button" class="icon-btn" onclick="closeAll()">×</button></div>
 <div class="cart-body" id="cartBody"></div>
-
 <div class="cart-footer">
-
-<div class="total">
-<span>Total</span>
-<span id="cartTotal">€ 0.00</span>
+<div class="total"><span>Total</span><span id="cartTotal">€ 0.00</span></div>
+<button type="button" class="btn btn-primary" style="width:100%" onclick="checkout()">Checkout <i class="fas fa-arrow-right"></i></button>
 </div>
-
-<button class="btn btn-primary" style="width:100%" onclick="checkout()">
-Checkout
-<i class="fas fa-arrow-right"></i>
-</button>
-
-</div>
-
 </aside>
 
 <div class="modal" id="checkoutModal">
-
 <div class="checkout-box">
-
-<button class="close" onclick="closeCheckout()">
-<i class="fas fa-times"></i>
-</button>
-
-<div id="checkoutFormArea">
-
+<button type="button" class="close" onclick="closeCheckout()">×</button>
 <div class="checkout-header">
-
 <h2>Checkout</h2>
-
-<p>
-Complete your information and choose your payment method.
-</p>
-
+<p>Complete your information and choose your payment method.</p>
 </div>
-
 <div class="checkout-content">
-
 <div class="checkout-grid">
-
 <div>
 
 <div class="form-section">
-
-<h3>
-<i class="fas fa-user"></i>
-Contact
-</h3>
-
+<h3><i class="fas fa-user"></i>Contact</h3>
 <div class="form-grid">
-
-<div class="field full">
-
-<label>Email</label>
-
-<input
-id="checkoutEmail"
-type="email"
-placeholder="you@example.com"
-required
->
-
+<div class="field full"><label>Email</label><input id="checkoutEmail" type="email" placeholder="you@example.com"></div>
+<div class="field full"><label>Phone number</label><input id="checkoutPhone" type="tel" placeholder="+49 ..."></div>
 </div>
-
-<div class="field full">
-
-<label>Phone number</label>
-
-<input
-id="checkoutPhone"
-type="tel"
-placeholder="+49 ..."
-required
->
-
-</div>
-
-</div>
-
 </div>
 
 <div class="form-section">
-
-<h3>
-<i class="fas fa-location-dot"></i>
-Delivery
-</h3>
-
+<h3><i class="fas fa-location-dot"></i>Delivery</h3>
 <div class="form-grid">
 
 <div class="field full">
-
 <label>Country / Region</label>
-
 <select id="checkoutCountry">
-
-<option value="Germany">
-Germany
-</option>
-
+<option value="Germany">Germany</option>
+<option value="Austria">Austria</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Netherlands">Netherlands</option>
+<option value="Belgium">Belgium</option>
+<option value="France">France</option>
+<option value="Italy">Italy</option>
+<option value="Spain">Spain</option>
+<option value="Portugal">Portugal</option>
+<option value="Poland">Poland</option>
+<option value="Czech Republic">Czech Republic</option>
+<option value="Denmark">Denmark</option>
+<option value="Sweden">Sweden</option>
+<option value="Norway">Norway</option>
+<option value="Finland">Finland</option>
+<option value="Ireland">Ireland</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="Canada">Canada</option>
 </select>
-
 </div>
 
-<div class="field">
-
-<label>First name</label>
-
-<input
-id="checkoutFirstName"
-type="text"
-placeholder="First name"
-required
->
+<div class="field"><label>First name</label><input id="checkoutFirstName" placeholder="First name"></div>
+<div class="field"><label>Last name</label><input id="checkoutLastName" placeholder="Last name"></div>
+<div class="field full"><label>Company (optional)</label><input id="checkoutCompany" placeholder="Company"></div>
+<div class="field full"><label>Address</label><input id="checkoutAddress" placeholder="Street and house number"></div>
+<div class="field full"><label>Apartment, suite, etc. (optional)</label><input id="checkoutApartment" placeholder="Apartment, suite, etc."></div>
+<div class="field"><label>Postal code</label><input id="checkoutZip" placeholder="00000"></div>
+<div class="field"><label>City</label><input id="checkoutCity" placeholder="City"></div>
 
 </div>
-
-<div class="field">
-
-<label>Last name</label>
-
-<input
-id="checkoutLastName"
-type="text"
-placeholder="Last name"
-required
->
-
 </div>
-
-<div class="field full">
-
-<label>Company (optional)</label>
-
-<input
-id="checkoutCompany"
-type="text"
-placeholder="Company"
->
-
-</div>
-
-<div class="field full">
-
-<label>Address</label>
-
-<input
-id="checkoutAddress"
-type="text"
-placeholder="Street and house number"
-required
->
-
-</div>
-
-<div class="field full">
-
-<label>Apartment, suite, etc. (optional)</label>
-
-<input
-id="checkoutApartment"
-type="text"
-placeholder="Apartment, suite, etc."
->
-
-</div>
-
-<div class="field">
-
-<label>Postal code</label>
-
-<input
-id="checkoutZip"
-type="text"
-placeholder="00000"
-required
->
-
-</div>
-
-<div class="field">
-
-<label>City</label>
-
-<input
-id="checkoutCity"
-type="text"
-placeholder="City"
-required
->
-
-</div>
-
-</div>
-
-</div>
-
-<div class="form-section">
-
-<h3>
-<i class="fas fa-credit-card"></i>
-Payment method
-</h3>
-
-<div class="payment-methods">
-
-<button
-type="button"
-class="payment-method active"
-data-method="BTC"
-onclick="selectPayment('BTC')">
-
-<i class="fab fa-bitcoin"></i>
-
-<span>Bitcoin</span>
-
-</button>
-
-<button
-type="button"
-class="payment-method"
-data-method="LTC"
-onclick="selectPayment('LTC')">
-
-<i class="fas fa-coins"></i>
-
-<span>Litecoin</span>
-
-</button>
-
-<button
-type="button"
-class="payment-method"
-data-method="ETH"
-onclick="selectPayment('ETH')">
-
-<i class="fab fa-ethereum"></i>
-
-<span>Ethereum</span>
-
-</button>
-
-</div>
-
-<div id="cryptoPayment" class="crypto-payment active">
-
-<div class="crypto-title">
-
-<i class="fas fa-wallet"></i>
-
-<span id="cryptoName">
-Bitcoin payment address
-</span>
-
-</div>
-
-<div class="crypto-address">
-
-<input
-id="cryptoAddress"
-readonly
-value="bc1q60w4zd4ew862x89we8c6t6ula4z8vmycty4z4x"
->
-
-<button
-class="copy-btn"
-onclick="copyCryptoAddress()">
-
-Copy
-
-</button>
-
-</div>
-
-<p class="payment-note">
-
-Send the required payment to this address.
-After payment, keep your transaction ID/hash for your records.
-
-</p>
-
-</div>
-
-</div>
-
 </div>
 
 <div class="order-summary">
-
 <h3>Order summary</h3>
-
 <div id="checkoutItems"></div>
-
-<div class="summary-total">
-
-<span>Total</span>
-
-<span id="checkoutTotal">
-€ 0.00
-</span>
-
+<div class="summary-total"><span>Total</span><span id="checkoutTotal">€ 0.00</span></div>
+<button type="button" class="btn btn-primary checkout-button" onclick="openPaymentMethod()"><i class="fas fa-wallet"></i>Payment Method</button>
+<div class="secure-note"><i class="fas fa-shield-halved"></i> Secure checkout</div>
 </div>
 
-<button
-class="btn btn-primary checkout-button"
-onclick="placeOrder()">
+</div>
+</div>
+</div>
+</div>
 
-<i class="fas fa-lock"></i>
+<div class="modal" id="paymentModal" style="z-index:5000">
+<div class="payment-modal-box">
+<button type="button" class="close" onclick="closePaymentMethod()">×</button>
 
-Place Order
+<div class="payment-window">
 
+<div class="payment-window-header">
+<div class="payment-window-icon"><i class="fas fa-wallet"></i></div>
+<h2>Payment Method</h2>
+<p>Select the payment method you want to use for this order.</p>
+</div>
+
+<div class="payment-total">
+<span>Total to pay</span>
+<strong id="paymentTotal">€ 0.00</strong>
+</div>
+
+<div class="payment-options">
+
+<button type="button" class="payment-option active" data-method="BTC" onclick="selectPayment('BTC')">
+<i class="fab fa-bitcoin"></i><span>Bitcoin</span>
 </button>
 
-<div class="secure-note">
-<i class="fas fa-shield-halved"></i>
-Secure checkout
-</div>
+<button type="button" class="payment-option" data-method="LTC" onclick="selectPayment('LTC')">
+<i class="fas fa-coins"></i><span>Litecoin</span>
+</button>
+
+<button type="button" class="payment-option" data-method="ETH" onclick="selectPayment('ETH')">
+<i class="fab fa-ethereum"></i><span>Ethereum</span>
+</button>
+
+<button type="button" class="payment-option" data-method="PAYPAL" onclick="selectPayment('PAYPAL')">
+<i class="fab fa-paypal"></i><span>PayPal</span>
+</button>
 
 </div>
 
+<div class="payment-address-box">
+
+<div class="payment-address-title">
+<i class="fas fa-wallet"></i>
+<span id="paymentCryptoName">Bitcoin payment address</span>
 </div>
 
+<div class="payment-address">
+<input id="paymentAddress" readonly value="bc1q60w4zd4ew862x89we8c6t6ula4z8vmycty4z4x">
+<button type="button" class="copy-btn" id="paymentActionButton" onclick="copyPaymentAddress()">Copy</button>
 </div>
 
-</div>
-
-<div class="success-screen" id="successScreen">
-
-<div class="success-icon">
-<i class="fas fa-check"></i>
-</div>
-
-<h2>Order received</h2>
-
-<p>
-Your order information has been recorded.
-Your selected payment method is
-<span id="successPayment"></span>.
+<p class="payment-note" id="paymentNote">
+Use only the selected cryptocurrency with the displayed address. Always verify the address before making a payment.
 </p>
 
-<div>
-Order number:
-<span class="order-number" id="successOrder"></span>
 </div>
 
-<br>
+<div class="payment-warning">
+<i class="fas fa-circle-info"></i>
+<strong>Important:</strong>
+Please send the payment first using the selected payment method. After the payment is confirmed, your scooter/bike will be shipped and should arrive within 5–6 business days.
+</div>
 
-<button class="btn btn-primary" onclick="finishCheckout()">
-Continue Shopping
+<div class="payment-actions">
+<button type="button" class="btn btn-secondary" onclick="closePaymentMethod()">
+<i class="fas fa-arrow-left"></i> Back to Checkout
 </button>
-
 </div>
 
+</div>
 </div>
 </div>
 
 <div id="toast"></div>
 
 <script>
-
-/* =========================================================
-   PRODUCTS
-========================================================= */
-
-const PRODUCTS = [
-
-{
- id:"x1",
- name:"KuKirin X1",
- series:"X Series",
- category:"Off-Road",
- price:349,
- old:399,
- image:"https://officialkukirin.store/cdn/shop/files/KukirinX1ElectricMotorcycle_5.jpg?v=1784232077&width=2000",
- description:"A compact dirt-bike style electric model designed for off-road use.",
- specs:{
-  "Motor":"1000 W",
-  "Battery":"48 V 20.8 Ah",
-  "Weight":"52 kg",
-  "Style":"Electric Dirt Bike",
-  "Use":"Off-Road"
- }
-},
-
-{
- id:"g2master",
- name:"KuKirin G2 Master",
- series:"G Series",
- category:"Off-Road",
- price:379,
- old:400,
- image:"https://officialkukirin.store/cdn/shop/files/KuKirin_G2_Master_2.png?v=1782888469&width=2000",
- description:"Dual-motor performance scooter with a 52 V 20.8 Ah battery.",
- specs:{
-  "Motor":"2 × 1000 W",
-  "Battery":"52 V 20.8 Ah",
-  "Range":"Up to 70 km",
-  "Weight":"33.1 kg",
-  "Drive":"Dual Motor"
- }
-},
-
-{
- id:"g2",
- name:"KuKirin G2",
- series:"G Series",
- category:"Commuter",
- price:249,
- old:349,
- image:"https://officialkukirin.store/cdn/shop/files/G2_5.jpg?v=1782888341&width=2000",
- description:"A versatile electric scooter designed for everyday riding and mixed surfaces.",
- specs:{
-  "Motor":"800 W",
-  "Weight":"25.3 kg",
-  "Class":"G Series",
-  "Tires":"10 inch",
-  "Use":"Everyday"
- }
-},
-
-{
- id:"g2vmp",
- name:"KuKirin G2 VMP",
- series:"G Series",
- category:"Commuter",
- price:219,
- old:329,
- image:"https://officialkukirin.store/cdn/shop/files/G2VMP_3.jpg?v=1784232075&width=2000",
- description:"A controlled-speed configuration with a 500 W motor and 10-inch tubeless tires.",
- specs:{
-  "Motor":"500 W",
-  "Speed":"25 km/h configuration",
-  "Tires":"10 inch",
-  "Weight":"25.3 kg",
-  "Drive":"Single Motor"
- }
-},
-
-{
- id:"g2proabe",
- name:"KuKirin G2 Pro ABE",
- series:"G Series",
- category:"Commuter",
- price:279,
- old:399,
- image:"https://officialkukirin.store/cdn/shop/files/KuKirinG2Pro_ABE_ElectricScooter_2.jpg?v=1784232074&width=2000",
- description:"The G2 Pro ABE configuration with 500 W motor and market-specific configuration.",
- specs:{
-  "Motor":"500 W",
-  "Speed":"20 km/h configuration",
-  "Range":"Up to 65 km",
-  "Tires":"10 inch",
-  "Certification":"ABE version"
- }
-},
-
-{
- id:"g4",
- name:"KuKirin G4",
- series:"G Series",
- category:"Off-Road",
- price:399,
- old:400,
- image:"https://officialkukirin.store/cdn/shop/files/Kukirin_G4_Fastest_Off_Road_Electric_Scooters_2.png?v=1782888538&width=2000",
- description:"A powerful performance scooter with a 2000 W motor and 60 V system.",
- specs:{
-  "Motor":"2000 W",
-  "System":"60 V",
-  "Tires":"11 inch",
-  "Weight":"35.5 kg",
-  "Use":"Off-Road / Private Property"
- }
-},
-
-{
- id:"t3",
- name:"KuKirin T3",
- series:"T Series",
- category:"Off-Road",
- price:289,
- old:379,
- image:"https://officialkukirin.store/cdn/shop/files/KuKirin_T3_Electric_Scooter_4.png?v=1782888514&width=2000",
- description:"A performance-oriented model with suspension and tubeless tires.",
- specs:{
-  "Motor":"800 W",
-  "Weight":"25.5 kg",
-  "Suspension":"Full Suspension",
-  "Tires":"Tubeless",
-  "Lighting":"Multi-Mode"
- }
-},
-
-{
- id:"g3pro",
- name:"KuKirin G3 Pro",
- series:"G Series",
- category:"Off-Road",
- price:389,
- old:400,
- image:"https://officialkukirin.store/cdn/shop/files/KuKirinG3Pro-2.jpg?v=1782888491&width=2000",
- description:"A dual-motor performance scooter with a removable battery.",
- specs:{
-  "Motor":"2 × 1200 W",
-  "Battery":"52 V 23.4 Ah",
-  "Range":"Up to 80 km",
-  "Weight":"39.6 kg",
-  "Drive":"Dual Motor"
- }
-},
-
-{
- id:"g2ultra",
- name:"KuKirin G2 Ultra",
- series:"G Series",
- category:"Off-Road",
- price:329,
- old:399,
- image:"https://officialkukirin.store/cdn/shop/files/15.jpg?v=1782888425&width=2000",
- description:"A dual-motor G Series scooter built for powerful mixed-surface riding.",
- specs:{
-  "Motor":"2 × 800 W",
-  "Battery":"48 V 18 Ah",
-  "Tires":"10 inch",
-  "Weight":"31 kg",
-  "Drive":"Dual Motor"
- }
-},
-
-{
- id:"g2max",
- name:"KuKirin G2 Max",
- series:"G Series",
- category:"Off-Road",
- price:299,
- old:379,
- image:"https://officialkukirin.store/cdn/shop/files/G2_Max-2.jpg?v=1782888405&width=2000",
- description:"A long-range G Series model with a 1000 W motor.",
- specs:{
-  "Motor":"1000 W",
-  "Range":"Up to 70 km",
-  "Weight":"31.6 kg",
-  "Seat":"Removable",
-  "Drive":"Single Motor"
- }
-},
-
-{
- id:"m4max",
- name:"KuKirin M4 Max",
- series:"M Series",
- category:"Commuter",
- price:239,
- old:329,
- image:"https://officialkukirin.store/cdn/shop/files/DSC04662.png?v=1782888383&width=2000",
- description:"A foldable commuter model with an 800 W motor.",
- specs:{
-  "Motor":"800 W",
-  "Battery":"48 V 18.2 Ah",
-  "Weight":"24 kg",
-  "Style":"Foldable",
-  "Use":"Commuter"
- }
-},
-
-{
- id:"g2provmp",
- name:"KuKirin G2 Pro VMP",
- series:"G Series",
- category:"Commuter",
- price:259,
- old:369,
- image:"https://officialkukirin.store/cdn/shop/files/KuKirinG2Pro_VMP_6.png?v=1782888361&width=2000",
- description:"A controlled-speed G2 Pro configuration designed around everyday mobility.",
- specs:{
-  "Motor":"500 W",
-  "Configuration":"25 km/h",
-  "Tires":"10 inch",
-  "Drive":"Single Motor",
-  "Use":"Commuter"
- }
-},
-
-{
- id:"g2pro",
- name:"KuKirin G2 Pro",
- series:"G Series",
- category:"Commuter",
- price:269,
- old:379,
- image:"https://officialkukirin.store/cdn/shop/files/KuKirin_G2_PRO-6.png?v=1782888320&width=2000",
- description:"A foldable commuter scooter with adjustable stem and suspension.",
- specs:{
-  "Motor":"600 W",
-  "Weight":"25 kg",
-  "Speed":"Up to 45 km/h",
-  "Suspension":"Dual",
-  "Drive":"Single Motor"
- }
-},
-
-{
- id:"a1",
- name:"KuKirin A1",
- series:"A Series",
- category:"Commuter",
- price:229,
- old:319,
- image:"https://officialkukirin.store/cdn/shop/files/KuKirinA1ElectricScooter_6.png?v=1782888276&width=2000",
- description:"A city-focused scooter with suspension and tubeless tires.",
- specs:{
-  "Motor":"800 W",
-  "Tires":"Tubeless",
-  "Suspension":"Front & Rear",
-  "Weight":"25.5 kg",
-  "Use":"City"
- }
-},
-
-{
- id:"s1max",
- name:"KuKirin S1 Max",
- series:"S Series",
- category:"Commuter",
- price:149,
- old:229,
- image:"https://officialkukirin.store/cdn/shop/files/KuKirinS1maxFolding_PortableE-scooterforCommute_10.png?v=1782888258&width=2000",
- description:"A lightweight folding electric scooter designed for short city trips.",
- specs:{
-  "Motor":"350 W",
-  "Style":"Foldable",
-  "Use":"City",
-  "Type":"Portable",
-  "Drive":"Single Motor"
- }
-}
-
+const PRODUCTS=[
+{id:"x1",name:"KuKirin X1",series:"X Series",category:"Off-Road",price:349,old:399,image:"https://officialkukirin.store/cdn/shop/files/KukirinX1ElectricMotorcycle_5.jpg?v=1784232077&width=2000",description:"A compact dirt-bike style electric model designed for off-road use.",specs:{Motor:"1000 W",Battery:"48 V 20.8 Ah",Weight:"52 kg",Style:"Electric Dirt Bike"}},
+{id:"g2master",name:"KuKirin G2 Master",series:"G Series",category:"Off-Road",price:379,old:400,image:"https://officialkukirin.store/cdn/shop/files/KuKirin_G2_Master_2.png?v=1782888469&width=2000",description:"Dual-motor performance scooter with a 52 V 20.8 Ah battery.",specs:{Motor:"2 × 1000 W",Battery:"52 V 20.8 Ah",Range:"Up to 70 km",Weight:"33.1 kg"}},
+{id:"g2",name:"KuKirin G2",series:"G Series",category:"Commuter",price:249,old:349,image:"https://officialkukirin.store/cdn/shop/files/G2_5.jpg?v=1782888341&width=2000",description:"A versatile electric scooter designed for everyday riding.",specs:{Motor:"800 W",Weight:"25.3 kg",Tires:"10 inch",Use:"Everyday"}},
+{id:"g4",name:"KuKirin G4",series:"G Series",category:"Off-Road",price:399,old:400,image:"https://officialkukirin.store/cdn/shop/files/Kukirin_G4_Fastest_Off_Road_Electric_Scooters_2.png?v=1782888538&width=2000",description:"A powerful performance scooter with a 2000 W motor.",specs:{Motor:"2000 W",System:"60 V",Tires:"11 inch",Weight:"35.5 kg"}},
+{id:"g3pro",name:"KuKirin G3 Pro",series:"G Series",category:"Off-Road",price:389,old:400,image:"https://officialkukirin.store/cdn/shop/files/KuKirinG3Pro-2.jpg?v=1782888491&width=2000",description:"A dual-motor performance scooter.",specs:{Motor:"2 × 1200 W",Battery:"52 V 23.4 Ah",Range:"Up to 80 km",Weight:"39.6 kg"}},
+{id:"g2max",name:"KuKirin G2 Max",series:"G Series",category:"Off-Road",price:299,old:379,image:"https://officialkukirin.store/cdn/shop/files/G2_Max-2.jpg?v=1782888405&width=2000",description:"A long-range G Series model with a 1000 W motor.",specs:{Motor:"1000 W",Range:"Up to 70 km",Weight:"31.6 kg",Drive:"Single Motor"}},
+{id:"m4max",name:"KuKirin M4 Max",series:"M Series",category:"Commuter",price:239,old:329,image:"https://officialkukirin.store/cdn/shop/files/DSC04662.png?v=1782888383&width=2000",description:"A foldable commuter model with an 800 W motor.",specs:{Motor:"800 W",Battery:"48 V 18.2 Ah",Weight:"24 kg",Style:"Foldable"}},
+{id:"s1max",name:"KuKirin S1 Max",series:"S Series",category:"Commuter",price:149,old:229,image:"https://officialkukirin.store/cdn/shop/files/KuKirinS1maxFolding_PortableE-scooterforCommute_10.png?v=1782888258&width=2000",description:"A lightweight folding electric scooter.",specs:{Motor:"350 W",Style:"Foldable",Use:"City",Drive:"Single Motor"}}
 ];
 
-/* =========================================================
-   PAYMENT ADDRESSES
-========================================================= */
-
-const PAYMENT_ADDRESSES = {
-
- BTC:{
-  name:"Bitcoin",
-  address:"bc1q60w4zd4ew862x89we8c6t6ula4z8vmycty4z4x"
- },
-
- LTC:{
-  name:"Litecoin",
-  address:"ltc1q0dpl3rrnlev9y6u95eq6mchn98zyfpqkhdc2u0"
- },
-
- ETH:{
-  name:"Ethereum",
-  address:"0x3595C6A67328E645C19428400B96A5Ea2e870652"
- }
-
+const PAYMENT_ADDRESSES={
+BTC:{name:"Bitcoin",address:"bc1q60w4zd4ew862x89we8c6t6ula4z8vmycty4z4x"},
+LTC:{name:"Litecoin",address:"ltc1q0dpl3rrnlev9y6u95eq6mchn98zyfpqkhdc2u0"},
+ETH:{name:"Ethereum",address:"0x3595C6A67328E645C19428400B96A5Ea2e870652"},
+PAYPAL:{name:"PayPal",address:"https://www.paypal.me/cheapzz"}
 };
 
 let selectedPayment="BTC";
-
-let cart=JSON.parse(
- localStorage.getItem("cheapzz_cart") || "[]"
-);
-
+let cart=JSON.parse(localStorage.getItem("cheapzz_cart")||"[]");
 let currentProducts=[...PRODUCTS];
 
-function money(value){
- return "€ "+Number(value).toLocaleString("en-EU",{
-  minimumFractionDigits:2,
-  maximumFractionDigits:2
- });
+function el(id){return document.getElementById(id)}
+
+function money(v){
+return "€ "+Number(v).toLocaleString("en-EU",{minimumFractionDigits:2,maximumFractionDigits:2})
 }
 
-function escapeHTML(value){
- return String(value)
- .replaceAll("&","&amp;")
- .replaceAll("<","&lt;")
- .replaceAll(">","&gt;")
- .replaceAll('"',"&quot;")
- .replaceAll("'","&#039;");
+function esc(v){
+return String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")
 }
 
-function getProduct(id){
- return PRODUCTS.find(product=>product.id===id);
+function getProduct(id){return PRODUCTS.find(p=>p.id===id)}
+
+function renderProducts(list=currentProducts){
+el("products").innerHTML=list.map(p=>`
+<article class="card">
+<div class="card-image" onclick="openProduct('${p.id}')">
+<span class="badge-sale">SAVE ${Math.round((1-p.price/p.old)*100)}%</span>
+<span class="badge-stock">IN STOCK</span>
+<img src="${p.image}" alt="${esc(p.name)}">
+</div>
+<div class="card-body">
+<div class="category">${esc(p.series)} · ${esc(p.category)}</div>
+<h3>${esc(p.name)}</h3>
+<p class="description">${esc(p.description)}</p>
+<div class="specs-mini">${Object.entries(p.specs).slice(0,4).map(([k,v])=>`<span>${esc(k)}: ${esc(v)}</span>`).join("")}</div>
+<div class="price-row"><span class="price">${money(p.price)}</span><span class="old-price">${money(p.old)}</span></div>
+<div class="card-buttons">
+<button type="button" class="btn btn-secondary" onclick="openProduct('${p.id}')">Details</button>
+<button type="button" class="btn btn-primary" onclick="addToCart('${p.id}')">Add</button>
+</div>
+</div>
+</article>`).join("")
 }
 
-function renderProducts(products=currentProducts){
-
- const container=document.getElementById("products");
-
- if(!products.length){
-
-  container.innerHTML=`
-  <div style="grid-column:1/-1;text-align:center;padding:80px;color:#777">
-  <i class="fas fa-search" style="font-size:45px;margin-bottom:15px"></i>
-  <h3>No products found</h3>
-  </div>`;
-
-  return;
- }
-
- container.innerHTML=products.map(product=>`
-
- <article class="card">
-
- <div class="card-image" onclick="openProduct('${product.id}')">
-
- <span class="badge-sale">
- SAVE ${Math.round((1-product.price/product.old)*100)}%
- </span>
-
- <span class="badge-stock">
- IN STOCK
- </span>
-
- <img
- src="${product.image}"
- alt="${escapeHTML(product.name)}"
- loading="lazy"
- onerror="imageFallback(this)"
- >
-
- </div>
-
- <div class="card-body">
-
- <div class="category">
- ${escapeHTML(product.series)}
- ·
- ${escapeHTML(product.category)}
- </div>
-
- <h3>${escapeHTML(product.name)}</h3>
-
- <p class="description">
- ${escapeHTML(product.description)}
- </p>
-
- <div class="specs-mini">
-
- ${Object.entries(product.specs)
- .slice(0,4)
- .map(([key,value])=>`
- <span>
- ${escapeHTML(key)}:
- ${escapeHTML(value)}
- </span>
- `).join("")}
-
- </div>
-
- <div class="price-row">
-
- <span class="price">
- ${money(product.price)}
- </span>
-
- <span class="old-price">
- ${money(product.old)}
- </span>
-
- </div>
-
- <div class="card-buttons">
-
- <button class="btn btn-secondary"
- onclick="openProduct('${product.id}')">
- Details
- </button>
-
- <button class="btn btn-primary"
- onclick="addToCart('${product.id}')">
- <i class="fas fa-cart-plus"></i>
- Add
- </button>
-
- </div>
-
- </div>
-
- </article>
-
- `).join("");
+function filterProducts(f){
+currentProducts=f==="All"?[...PRODUCTS]:PRODUCTS.filter(p=>p.series===f||p.category===f);
+renderProducts(currentProducts);
+el("shop").scrollIntoView({behavior:"smooth"})
 }
 
-function filterProducts(filter){
-
- document.querySelectorAll(".filter").forEach(button=>{
-  button.classList.toggle(
-   "active",
-   button.textContent.trim()===filter
-  );
- });
-
- if(filter==="All"){
-  currentProducts=[...PRODUCTS];
- }
- else if(["G Series","M Series","S Series"].includes(filter)){
-  currentProducts=PRODUCTS.filter(
-   product=>product.series===filter
-  );
- }
- else{
-  currentProducts=PRODUCTS.filter(
-   product=>product.category===filter
-  );
- }
-
- renderProducts(currentProducts);
-
- document.getElementById("shop").scrollIntoView({
-  behavior:"smooth"
- });
-}
-
-function sortProducts(type){
-
- let sorted=[...currentProducts];
-
- if(type==="low")
-  sorted.sort((a,b)=>a.price-b.price);
-
- if(type==="high")
-  sorted.sort((a,b)=>b.price-a.price);
-
- if(type==="name")
-  sorted.sort((a,b)=>a.name.localeCompare(b.name));
-
- if(type==="featured")
-  sorted.sort(
-   (a,b)=>PRODUCTS.indexOf(a)-PRODUCTS.indexOf(b)
-  );
-
- renderProducts(sorted);
+function sortProducts(t){
+let a=[...currentProducts];
+if(t==="low")a.sort((x,y)=>x.price-y.price);
+if(t==="high")a.sort((x,y)=>y.price-x.price);
+if(t==="name")a.sort((x,y)=>x.name.localeCompare(y.name));
+renderProducts(a)
 }
 
 function openProduct(id){
-
- const product=getProduct(id);
-
- if(!product)return;
-
- document.getElementById("detailImage").src=product.image;
- document.getElementById("detailImage").alt=product.name;
- document.getElementById("detailCategory").textContent=
-  product.series+" · "+product.category;
- document.getElementById("detailName").textContent=product.name;
- document.getElementById("detailPrice").textContent=money(product.price);
- document.getElementById("detailOld").textContent=money(product.old);
- document.getElementById("detailDescription").textContent=product.description;
-
- document.getElementById("detailSpecs").innerHTML=
- Object.entries(product.specs).map(([key,value])=>`
- <div class="spec-box">
- <small>${escapeHTML(key)}</small>
- <strong>${escapeHTML(value)}</strong>
- </div>
- `).join("");
-
- document.getElementById("detailAdd").onclick=
- ()=>addToCart(product.id);
-
- closeAll();
-
- document.getElementById("productModal").classList.add("active");
- document.getElementById("overlay").classList.add("active");
-
- document.body.style.overflow="hidden";
+let p=getProduct(id);if(!p)return;
+el("detailImage").src=p.image;
+el("detailName").textContent=p.name;
+el("detailCategory").textContent=p.series+" · "+p.category;
+el("detailPrice").textContent=money(p.price);
+el("detailOld").textContent=money(p.old);
+el("detailDescription").textContent=p.description;
+el("detailSpecs").innerHTML=Object.entries(p.specs).map(([k,v])=>`<div class="spec-box"><small>${esc(k)}</small><strong>${esc(v)}</strong></div>`).join("");
+el("detailAdd").onclick=()=>addToCart(p.id);
+closeAll();
+el("productModal").classList.add("active");
+document.body.style.overflow="hidden"
 }
 
 function addToCart(id){
-
- const product=getProduct(id);
-
- if(!product)return;
-
- const existing=cart.find(item=>item.id===id);
-
- if(existing)
-  existing.qty++;
- else
-  cart.push({
-   id:product.id,
-   name:product.name,
-   price:product.price,
-   image:product.image,
-   qty:1
-  });
-
- saveCart();
- renderCart();
- updateCartCount();
-
- showToast(product.name+" added to cart");
+let p=getProduct(id);if(!p)return;
+let x=cart.find(i=>i.id===id);
+if(x)x.qty++;
+else cart.push({id:p.id,name:p.name,price:p.price,image:p.image,qty:1});
+saveCart();renderCart();updateCartCount();showToast(p.name+" added to cart")
 }
 
-function saveCart(){
- localStorage.setItem("cheapzz_cart",JSON.stringify(cart));
-}
+function saveCart(){localStorage.setItem("cheapzz_cart",JSON.stringify(cart))}
 
 function updateCartCount(){
-
- const count=cart.reduce(
-  (sum,item)=>sum+item.qty,
-  0
- );
-
- const badge=document.getElementById("cartCount");
-
- badge.textContent=count;
-
- badge.classList.toggle("show",count>0);
+let n=cart.reduce((s,i)=>s+i.qty,0);
+el("cartCount").textContent=n;
+el("cartCount").classList.toggle("show",n>0)
 }
 
-function changeQuantity(id,change){
-
- const item=cart.find(product=>product.id===id);
-
- if(!item)return;
-
- item.qty+=change;
-
- if(item.qty<=0){
-  cart=cart.filter(product=>product.id!==id);
- }
-
- saveCart();
- renderCart();
- updateCartCount();
-}
-
-function removeFromCart(id){
-
- cart=cart.filter(item=>item.id!==id);
-
- saveCart();
- renderCart();
- updateCartCount();
-}
-
-function getCartTotal(){
-
- return cart.reduce(
-  (total,item)=>total+(item.price*item.qty),
-  0
- );
-}
+function getCartTotal(){return cart.reduce((s,i)=>s+i.price*i.qty,0)}
 
 function renderCart(){
+if(!cart.length){
+el("cartBody").innerHTML='<div class="empty-cart" style="text-align:center;padding:70px;color:#777"><i class="fas fa-shopping-bag" style="font-size:50px"></i><h3>Your cart is empty</h3></div>'
+}else{
+el("cartBody").innerHTML=cart.map(i=>`
+<div class="cart-item">
+<img src="${i.image}" alt="${esc(i.name)}">
+<div>
+<h4>${esc(i.name)}</h4>
+<div class="cart-price">${money(i.price)}</div>
+<div class="quantity">
+<button type="button" onclick="changeQty('${i.id}',-1)">−</button>
+<span>${i.qty}</span>
+<button type="button" onclick="changeQty('${i.id}',1)">+</button>
+</div>
+</div>
+<button type="button" class="remove" onclick="removeCart('${i.id}')">×</button>
+</div>`).join("")
+}
+el("cartTotal").textContent=money(getCartTotal())
+}
 
- const body=document.getElementById("cartBody");
+function changeQty(id,n){
+let x=cart.find(i=>i.id===id);if(!x)return;
+x.qty+=n;
+if(x.qty<=0)cart=cart.filter(i=>i.id!==id);
+saveCart();renderCart();updateCartCount()
+}
 
- if(!cart.length){
-
-  body.innerHTML=`
-  <div class="empty-cart">
-  <i class="fas fa-shopping-bag"></i>
-  <h3>Your cart is empty</h3>
-  <p>Add a KuKirin model to get started.</p>
-  </div>`;
-
- }
- else{
-
-  body.innerHTML=cart.map(item=>`
-
-  <div class="cart-item">
-
-  <img
-  src="${item.image}"
-  alt="${escapeHTML(item.name)}"
-  onerror="imageFallback(this)"
-  >
-
-  <div>
-
-  <h4>${escapeHTML(item.name)}</h4>
-
-  <div class="cart-price">
-  ${money(item.price)}
-  </div>
-
-  <div class="quantity">
-
-  <button onclick="changeQuantity('${item.id}',-1)">
-  −
-  </button>
-
-  <span>${item.qty}</span>
-
-  <button onclick="changeQuantity('${item.id}',1)">
-  +
-  </button>
-
-  </div>
-
-  </div>
-
-  <button
-  class="remove"
-  onclick="removeFromCart('${item.id}')">
-
-  <i class="fas fa-trash"></i>
-
-  </button>
-
-  </div>
-
-  `).join("");
- }
-
- document.getElementById("cartTotal").textContent=
-  money(getCartTotal());
+function removeCart(id){
+cart=cart.filter(i=>i.id!==id);
+saveCart();renderCart();updateCartCount()
 }
 
 function openCart(){
-
- closeAll();
-
- renderCart();
-
- document.getElementById("cart").classList.add("active");
- document.getElementById("overlay").classList.add("active");
-
- document.body.style.overflow="hidden";
+closeAll();
+renderCart();
+el("cart").classList.add("active");
+el("overlay").classList.add("active");
+document.body.style.overflow="hidden"
 }
 
 function openSearch(){
-
- closeAll();
-
- document.getElementById("searchModal").classList.add("active");
- document.getElementById("overlay").classList.add("active");
-
- const input=document.getElementById("searchInput");
-
- input.value="";
-
- renderSearchResults("");
-
- document.body.style.overflow="hidden";
-
- setTimeout(()=>input.focus(),100);
+closeAll();
+const modal=el("searchModal");
+const overlay=el("overlay");
+const input=el("searchInput");
+modal.classList.add("active");
+overlay.classList.add("active");
+document.body.style.overflow="hidden";
+input.value="";
+renderSearch("");
+setTimeout(()=>input.focus(),100)
 }
 
-function searchProducts(query){
- renderSearchResults(query);
-}
+function searchProducts(q){renderSearch(q)}
 
-function renderSearchResults(query){
-
- const q=query.toLowerCase().trim();
-
- const results=PRODUCTS.filter(product=>{
-
-  const searchable=[
-   product.name,
-   product.series,
-   product.category,
-   product.description,
-   ...Object.keys(product.specs),
-   ...Object.values(product.specs)
-  ].join(" ").toLowerCase();
-
-  return searchable.includes(q);
- });
-
- const container=document.getElementById("searchResults");
-
- if(!results.length){
-
-  container.innerHTML=`
-  <div style="padding:35px;text-align:center;color:#777">
-  No products found.
-  </div>`;
-
-  return;
- }
-
- container.innerHTML=results.map(product=>`
-
- <div
- class="search-result"
- onclick="openProduct('${product.id}')">
-
- <img
- src="${product.image}"
- alt="${escapeHTML(product.name)}"
- onerror="imageFallback(this)"
- >
-
- <div class="search-info">
-
- <strong>
- ${escapeHTML(product.name)}
- </strong>
-
- <span>
- ${money(product.price)}
- </span>
-
- </div>
-
- <i class="fas fa-arrow-right" style="color:#555"></i>
-
- </div>
-
- `).join("");
+function renderSearch(q){
+let s=String(q||"").toLowerCase();
+let r=PRODUCTS.filter(p=>(p.name+" "+p.series+" "+p.category+" "+p.description).toLowerCase().includes(s));
+el("searchResults").innerHTML=r.map(p=>`
+<div class="search-result" onclick="openProduct('${p.id}')">
+<img src="${p.image}" alt="${esc(p.name)}">
+<div class="search-info"><strong>${esc(p.name)}</strong><span>${money(p.price)}</span></div>
+</div>`).join("")
 }
 
 function closeAll(){
-
- document.getElementById("productModal").classList.remove("active");
- document.getElementById("searchModal").classList.remove("active");
- document.getElementById("cart").classList.remove("active");
- document.getElementById("overlay").classList.remove("active");
-
- document.body.style.overflow="";
+el("productModal").classList.remove("active");
+el("searchModal").classList.remove("active");
+el("cart").classList.remove("active");
+el("overlay").classList.remove("active");
+document.body.style.overflow=""
 }
 
 function checkout(){
-
- if(!cart.length){
-
-  showToast("Your cart is empty.");
-
-  return;
- }
-
- closeAll();
-
- renderCheckoutSummary();
-
- document.getElementById("checkoutModal").classList.add("active");
-
- document.body.style.overflow="hidden";
+if(!cart.length)return showToast("Your cart is empty.");
+closeAll();
+renderCheckoutSummary();
+el("checkoutModal").classList.add("active");
+document.body.style.overflow="hidden"
 }
 
 function renderCheckoutSummary(){
-
- const container=document.getElementById("checkoutItems");
-
- container.innerHTML=cart.map(item=>`
-
- <div class="summary-item">
-
- <span>
- ${escapeHTML(item.name)} × ${item.qty}
- </span>
-
- <strong>
- ${money(item.price*item.qty)}
- </strong>
-
- </div>
-
- `).join("");
-
- document.getElementById("checkoutTotal").textContent=
-  money(getCartTotal());
+el("checkoutItems").innerHTML=cart.map(i=>`<div class="summary-item"><span>${esc(i.name)} × ${i.qty}</span><strong>${money(i.price*i.qty)}</strong></div>`).join("");
+el("checkoutTotal").textContent=money(getCartTotal());
+el("paymentTotal").textContent=money(getCartTotal())
 }
+
+function openPaymentMethod(){
+let fields=["checkoutEmail","checkoutPhone","checkoutFirstName","checkoutLastName","checkoutAddress","checkoutZip","checkoutCity"];
+for(let id of fields){
+let field=el(id);
+if(!field||!field.value.trim())return showToast("Please complete all required fields.")
+}
+let email=el("checkoutEmail").value.trim();
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return showToast("Please enter a valid email address.");
+el("paymentTotal").textContent=money(getCartTotal());
+el("paymentModal").classList.add("active");
+selectPayment(selectedPayment)
+}
+
+function closePaymentMethod(){el("paymentModal").classList.remove("active")}
 
 function selectPayment(method){
+selectedPayment=method;
 
- selectedPayment=method;
+document.querySelectorAll(".payment-option").forEach(button=>{
+button.classList.toggle("active",button.dataset.method===method)
+});
 
- document.querySelectorAll(".payment-method").forEach(button=>{
-  button.classList.toggle(
-   "active",
-   button.dataset.method===method
-  );
- });
+const payment=PAYMENT_ADDRESSES[method];
+if(!payment)return;
 
- const payment=PAYMENT_ADDRESSES[method];
+el("paymentCryptoName").textContent=method==="PAYPAL"?"PayPal payment":payment.name+" payment address";
+el("paymentAddress").value=payment.address;
 
- document.getElementById("cryptoName").textContent=
-  payment.name+" payment address";
+const actionButton=el("paymentActionButton");
+const note=el("paymentNote");
 
- document.getElementById("cryptoAddress").value=
-  payment.address;
+if(method==="PAYPAL"){
+note.textContent="Continue to PayPal using the official payment link below.";
+actionButton.textContent="Open PayPal";
+actionButton.onclick=function(){
+window.open("https://www.paypal.me/cheapzz","_blank","noopener,noreferrer")
+}
+}else{
+note.textContent="Use only the selected cryptocurrency with the displayed address. Always verify the address before making a payment.";
+actionButton.textContent="Copy";
+actionButton.onclick=copyPaymentAddress
+}
 }
 
-async function copyCryptoAddress(){
-
- const input=document.getElementById("cryptoAddress");
-
- try{
-
-  await navigator.clipboard.writeText(input.value);
-
-  showToast("Payment address copied.");
-
- }
- catch{
-
-  input.select();
-
-  document.execCommand("copy");
-
-  showToast("Payment address copied.");
-
- }
+async function copyPaymentAddress(){
+try{
+await navigator.clipboard.writeText(el("paymentAddress").value);
+showToast("Payment address copied.")
+}catch{
+el("paymentAddress").select();
+document.execCommand("copy");
+showToast("Payment address copied.")
 }
-
-function placeOrder(){
-
- const fields={
-
-  email:document.getElementById("checkoutEmail").value.trim(),
-
-  phone:document.getElementById("checkoutPhone").value.trim(),
-
-  firstName:document.getElementById("checkoutFirstName").value.trim(),
-
-  lastName:document.getElementById("checkoutLastName").value.trim(),
-
-  address:document.getElementById("checkoutAddress").value.trim(),
-
-  zip:document.getElementById("checkoutZip").value.trim(),
-
-  city:document.getElementById("checkoutCity").value.trim()
-
- };
-
- for(const value of Object.values(fields)){
-
-  if(!value){
-
-   showToast("Please complete all required fields.");
-
-   return;
-  }
- }
-
- if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)){
-
-  showToast("Please enter a valid email address.");
-
-  return;
- }
-
- const orderNumber=
-  "CZ-"+Date.now().toString().slice(-8);
-
- const order={
-
-  orderNumber,
-
-  customer:{
-
-   email:fields.email,
-
-   phone:fields.phone,
-
-   firstName:fields.firstName,
-
-   lastName:fields.lastName,
-
-   company:document.getElementById("checkoutCompany").value.trim(),
-
-   address:fields.address,
-
-   apartment:document.getElementById("checkoutApartment").value.trim(),
-
-   zip:fields.zip,
-
-   city:fields.city,
-
-   country:"Germany"
-
-  },
-
-  payment:{
-
-   method:selectedPayment,
-
-   address:PAYMENT_ADDRESSES[selectedPayment].address
-
-  },
-
-  items:cart.map(item=>({
-
-   id:item.id,
-
-   name:item.name,
-
-   price:item.price,
-
-   quantity:item.qty
-
-  })),
-
-  total:getCartTotal()
-
- };
-
- localStorage.setItem(
-  "cheapzz_last_order",
-  JSON.stringify(order)
- );
-
- document.getElementById("checkoutFormArea").style.display="none";
-
- document.getElementById("successScreen").classList.add("active");
-
- document.getElementById("successOrder").textContent=
-  orderNumber;
-
- document.getElementById("successPayment").textContent=
-  PAYMENT_ADDRESSES[selectedPayment].name;
-
 }
 
 function closeCheckout(){
-
- document.getElementById("checkoutModal").classList.remove("active");
-
- document.getElementById("checkoutFormArea").style.display="block";
-
- document.getElementById("successScreen").classList.remove("active");
-
- document.body.style.overflow="";
+el("checkoutModal").classList.remove("active");
+el("paymentModal").classList.remove("active");
+document.body.style.overflow=""
 }
 
-function finishCheckout(){
-
- cart=[];
-
- saveCart();
- renderCart();
- updateCartCount();
-
- closeCheckout();
-
- showToast("Thank you for your order.");
+function showToast(m){
+el("toast").innerHTML=`<div class="toast"><i class="fas fa-check-circle" style="color:#2ecc71;margin-right:8px"></i>${esc(m)}</div>`;
+setTimeout(()=>el("toast").innerHTML="",2500)
 }
 
-function showToast(message){
+function home(){window.scrollTo({top:0,behavior:"smooth"})}
 
- const container=document.getElementById("toast");
-
- container.innerHTML=`
- <div class="toast">
- <i class="fas fa-check-circle"
- style="color:#2ecc71;margin-right:8px"></i>
- ${escapeHTML(message)}
- </div>
- `;
-
- setTimeout(()=>{
-  container.innerHTML="";
- },2500);
+document.addEventListener("keydown",e=>{
+if(e.key==="Escape"){
+closePaymentMethod();
+closeAll();
+closeCheckout()
 }
-
-function home(){
-
- window.scrollTo({
-  top:0,
-  behavior:"smooth"
- });
-}
-
-function imageFallback(image){
-
- image.onerror=null;
-
- image.src=
- "data:image/svg+xml;charset=UTF-8,"+
- encodeURIComponent(`
- <svg xmlns="http://www.w3.org/2000/svg"
- width="800" height="600">
-
- <rect width="100%" height="100%" fill="#eeeeee"/>
-
- <text x="50%" y="50%"
- text-anchor="middle"
- dominant-baseline="middle"
- font-family="Arial"
- font-size="36"
- fill="#999">
- Cheapzz
- </text>
-
- </svg>
- `);
-}
-
-document.addEventListener("keydown",event=>{
-
- if(event.key==="Escape"){
-
-  closeAll();
-  closeCheckout();
-
- }
-
 });
 
 document.addEventListener("DOMContentLoaded",()=>{
-
- renderProducts();
- renderCart();
- updateCartCount();
- selectPayment("BTC");
-
+renderProducts();
+renderCart();
+updateCartCount();
+selectPayment("BTC")
 });
-
 </script>
 
 </body>
